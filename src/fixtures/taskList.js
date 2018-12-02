@@ -53,3 +53,5 @@ const taskList = [
         ,dueDate:new Date("01/01/2020")
     }
 ];
+
+export default taskList;
