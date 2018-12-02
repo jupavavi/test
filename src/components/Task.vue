@@ -63,6 +63,7 @@ export default {
 </script>
 <style lang="scss" scoped>
     @import '~bulma';
+
     .is-128 {
         width: 128px;
     }
