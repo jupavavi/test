@@ -23,7 +23,7 @@
                 </div>
                 <nav class="level is-mobile" v-if=!completed>
                     <div class="level-left">
-                        <button class="button is-info level-item" aria-label="reply">
+                        <button class="button is-info level-item" aria-label="reply" @click="$emit('setCompleted', id)">
                             <span class="icon is-small">
                                 <Icon icon="check" aria-hidden="true"></Icon>
                             </span>&nbsp;
@@ -39,7 +39,12 @@
 import { distanceInWordsToNow } from 'date-fns';
 
 export default {
+    model: {
+        prop: 'completed',
+        event: 'setCompleted'
+    },
     props: {
+        id: [String, Number],
         title: String,
         img: String,
         description: String,

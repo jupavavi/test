@@ -6,6 +6,8 @@
                 <Task
                     v-for="item in taskList"
                     v-bind=item
+                    v-model=item.completed
+                    @setCompleted=setCompleted
                     :key=item.id
                 />
             </div>
@@ -33,6 +35,10 @@ export default {
             this.taskList.unshift({
                 title: 'hi',
             });
+        },
+        setCompleted(id) {
+            const task = this.taskList.find((task) => task.id === id);
+            task && (task.completed = true);
         }
     }
 };
